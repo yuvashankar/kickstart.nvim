@@ -1,5 +1,9 @@
 # kickstart.nvim
+## Important Comands
 
+| Keymap     | Description        | 
+| ---------- | ------------------ | 
+| <space> sh | Search for Keymaps | 
 ## Introduction
 
 A starting point for Neovim that is:
