@@ -1,4 +1,5 @@
 local Plugins = {
-	{'folke/tokyonight.nvim"},
+	{"folke/tokyonight.nvim"},
+	{"tpope/vim-sleuth"},
 }
 return Plugins
