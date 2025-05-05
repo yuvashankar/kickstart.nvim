@@ -211,12 +211,7 @@ return {
         -- clangd = {},
         -- gopls = {},
         pyright = {},
-        rust_analyzer = {
-          diagnostics = true,
-          on_attach = function(client, bufnr)
-            vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-          end,
-        },
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -236,7 +231,7 @@ return {
                 callSnippet = 'Replace',
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
+              diagnostics = { disable = { 'missing-fields' } },
             },
           },
         },
@@ -261,10 +256,11 @@ return {
       })
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      -- -- VY: Disable mason's rust-analyzer
+      -- require('mason-lspconfig').setup_handlers {
+      --   ['rust_analyzer'] = function() end,
+      -- }
 
-      require('mason-lspconfig').setup_handlers {
-        ['rust_analyzer'] = function() end,
-      }
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_installation = false,
