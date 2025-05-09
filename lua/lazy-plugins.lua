@@ -17,6 +17,7 @@ require('lazy').setup({
   require 'plugins/treesitter',
   require 'plugins/lazy_dev',
   require 'plugins.blink-cmp',
+  require "plugins/luarocks",
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
